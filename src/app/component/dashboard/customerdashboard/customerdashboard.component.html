@@ -1,0 +1,118 @@
+<!-- Sidebar/menu -->
+<nav
+  class="w3-sidebar w3-collapse w3-white w3-animate-left"
+  style="z-index: 3; width: 300px"
+  id="mySidebar"
+>
+  <div class="w3-container w3-row" style="margin-top: 1.5rem;">
+    <div class="w3-col s4">
+      <img
+        src="netbank.ico"
+        class="w3-circle w3-margin-right"
+        style="width: 46px"
+      />
+    </div>
+    <div class="w3-col s8 w3-bar">
+      <span
+        >Welcome, <br />
+        <strong>Rahul Kunamala </strong></span
+      >
+    </div>
+  </div>
+  <hr />
+  <!-- <div class="w3-container">
+    <h5>Dashboard</h5>
+  </div> -->
+  <div class="w3-bar-block">
+    <a
+      href="#"
+      class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black"
+      onclick="w3_close()"
+      title="close menu"
+      ><i class="fa fa-remove fa-fw"></i>  Close Menu</a
+    >
+    <a
+      routerLink="/customerdashboard/hero"
+      class="w3-bar-item w3-button w3-padding"
+      ><i class="fa fa-bullseye fa-fw"></i>  Home</a
+    >
+    <a
+      routerLink="/customerdashboard/accounts"
+      class="w3-bar-item w3-button w3-padding"
+      ><i class="fa fa-users fa-fw"></i>  Accounts</a
+    >
+
+    <!-- routerLink="/customerdashboard/withdraw" -->
+    <a class="w3-bar-item w3-button w3-padding" (click)="withdraw()"
+      ><i class="fa fa-bank fa-fw"></i>  Withdraw</a
+    >
+    <div [hidden]="withdraw_flag">
+      <a
+        class="w3-bar-item w3-button w3-padding"
+        style="margin-left: 1rem"
+        (click)="withdrawCheque(cheque)"
+        ><i class="fa fa-bullseye fa-fw"></i>Cheque-Withdraw</a
+      >
+      <a
+        class="w3-bar-item w3-button w3-padding"
+        (click)="withdrawMoney(money)"
+        style="margin-left: 1rem"
+        ><i class="fa fa-bullseye fa-fw"></i>  Money</a
+      >
+    </div>
+
+    <a
+      routerLink="/customerdashboard/deposit"
+      class="w3-bar-item w3-button w3-padding"
+      ><i class="fa fa-diamond fa-fw"></i>  Deposit</a
+    >
+    <a
+      routerLink="/customerdashboard/transfer"
+      class="w3-bar-item w3-button w3-padding"
+      ><i class="fa fa-user fa-fw"></i>  Transfer</a
+    >
+    <a
+      routerLink="/customerdashboard/cheque"
+      class="w3-bar-item w3-button w3-padding"
+      ><i class="fa fa-envelope fa-fw"></i>  Cheque</a
+    >
+
+
+
+
+    <a class="w3-bar-item w3-button w3-padding" (click)="history()"
+      ><i class="fa fa-history fa-fw"></i>  History</a
+    >
+    <div [hidden]="history_flag">
+      <a
+        class="w3-bar-item w3-button w3-padding"
+        style="margin-left: 1rem"
+        (click)="minitransaction(mini)"
+        ><i class="fa fa-bullseye fa-fw"></i>Mini</a
+      >
+      <a
+        class="w3-bar-item w3-button w3-padding"
+        (click)="wholetransactions(whole)"
+        style="margin-left: 1rem"
+        ><i class="fa fa-bullseye fa-fw"></i>  All</a
+      >
+    </div>
+
+
+    
+  </div>
+</nav>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div
+  class="w3-overlay w3-hide-large w3-animate-opacity"
+  onclick="w3_close()"
+  style="cursor: pointer"
+  title="close side menu"
+  id="myOverlay"
+></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left: 300px; ">
+  <router-outlet ></router-outlet>
+</div>

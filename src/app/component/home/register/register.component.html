@@ -1,0 +1,99 @@
+ <div class="container">
+        <h1 class="main-header">Account Application Form.</h1>
+        <hr>
+        <form id="app-form" action="">
+        <fieldset class="sub-container" id="basic-details">
+          <h2 class="sub-heading">Basic Details</h2>
+          <hr>
+            <label for="dropdown" class="standard-label">
+              Title<span class="required">*</span>
+              <br>
+              <select  id="dropdown" class="standard-select" required>
+                <option value="select" disabled selected>Select Title</option>
+                <option value="Mr">Mr</option>
+                <option value="Mrs">Mrs</option>
+                <option value="Miss">Miss</option>
+                <option value="Ms">Ms</option>
+                <option value="Dr">Dr</option>
+                <option value="Prof">Prof</option>
+              </select>
+            </label>
+
+            <label for="firstname" class="standard-label">
+              First Name<span class="required">*</span>
+              <input class="standard-input" name="firstname" id="firstname" type="text" placeholder="First name..." required>
+            </label>
+            
+            <label for="middlenames" class="standard-label">
+              Middle Names (If Applicable)
+              <input class="standard-input" name="middlename" id="middlename" type="text" placeholder="Middle names...">
+            </label>
+
+            <label for="lastname" class="standard-label">
+              Last Name<span class="required">*</span>
+              <input class="standard-input" name="lastname" id="lastname" type="text" placeholder="Last name..." required>
+            </label>
+
+            <label for="username" class="standard-label">
+                UserName<span class="required">*</span>
+                <input class="standard-input" name="username" id="username" type="text" placeholder="UserName must be unique" required>
+            </label>
+
+            <button class="unique">check</button>
+            <br>
+            <br>
+
+            <label for="password" class="standard-label">
+                Password <span class="required">*</span>
+                <input class="standard-input" name="password" id="password" type="password" placeholder="Password" required>
+            </label>
+
+            <label for="address" class="standard-label">
+                Address <span class="required">*</span>
+                <input class="standard-input" name="address" id="address" type="text" placeholder="Enter the Street" required>
+            </label>
+
+            <label for="city" class="standard-label">
+                City 
+                <input class="standard-input" name="city" id="city" type="text" placeholder="Eg.Chennai/Bangalore">
+            </label>
+
+            <label for="state" class="standard-label">
+                State <span class="required">*</span>
+                <input class="standard-input" name="state" id="state" type="text" placeholder="Eg.TamilNadu/Telugana">
+            </label>
+
+            <label for="zip" class="standard-label">
+                Zip Code <span class="required">*</span>
+                <input class="standard-input" type="text" name="zip" id="zip" placeholder="Eg.600101">
+            </label>
+
+           
+            <label for="phone-number" class="standard-label">
+              Phone Number<span class="required">*</span>
+              <input class="standard-input" type="tel" id="phone" name="phone" pattern='^\+?\d{10,12}' placeholder="Example: 9999999999" required>
+            </label>
+
+            <label for="email-address" class="standard-label">
+              Email<span class="required">*</span>
+              <input class="standard-input" id="email-address" type="email" placeholder="Your email address..." required>
+            </label>
+            <label for="DOB" class="standard-label">
+              Date of Birth<span class="required">*</span>
+              <input class="standard-input" type="date" name="DOB" id="DOB" required>
+            </label>
+            <label for="accounttype" class="standard-label">
+              What type of account are you applying for?<span class="required">*</span>
+              <br>
+              <select  id="account-select" class="standard-select" required>
+                <option value="select" disabled selected>Choose Account</option>
+                <option value="current">Basic Current Account</option>
+                <option value="savings">Basic Savings Account</option>
+              </select>
+            </label>
+            <button type="button" id="show-address">Continue</button>
+          </fieldset>
+        </form>
+      </div>
+
+      

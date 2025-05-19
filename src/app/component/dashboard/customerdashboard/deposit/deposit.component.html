@@ -1,0 +1,75 @@
+<main class="body">
+  <div class="">
+    <header style="margin-top: 1rem;">
+      <h2>Deposit Funds</h2>
+    </header>
+
+    <form class="deposit-form" style="display: flex; gap: 2rem">
+      <section class="account-details" style="width: 30rem">
+        <h3>Account Information</h3>
+        <div class="form-group">
+          <label for="accountNumber"
+            ><i class="fas fa-hashtag"></i> Account Number</label
+          >
+          <input
+            type="text"
+            id="accountNumber"
+            placeholder="Enter your account number"
+          />
+        </div>
+        <div class="form-group">
+          <label for="accountHolder"> Account Holder Name</label>
+          <input
+            type="text"
+            id="accountHolder"
+            placeholder="Name as on the account"
+          />
+        </div>
+      </section>
+
+      <section class="deposit-details" style="width: 30rem">
+        <h3>Deposit Details</h3>
+        <div class="form-group">
+          <label for="depositAmount"> Deposit Amount (₹)</label>
+          <div class="input-with-icon">
+            <input
+              type="number"
+              id="depositAmount"
+              placeholder="Enter amount to deposit"
+            />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="paymentMethod"
+            > Payment Method</label
+          >
+          <select id="paymentMethod">
+            <option value="">Select Payment Method</option>
+            <option value="netbanking">Net Banking</option>
+            <option value="upi">UPI</option>
+            <option value="debitcard">Debit Card</option>
+            <option value="creditcard">Credit Card</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="transactionReference"
+            ><i class="fas fa-receipt"></i> Transaction Reference
+            (Optional)</label
+          >
+          <input
+            type="text"
+            id="transactionReference"
+            placeholder="e.g., Transaction ID"
+          />
+        </div>
+      </section>
+    </form>
+    <div class="button-group" style="display: flex;justify-content: center;">
+      <button type="reset" class="cancel-button">Cancel</button>
+      <button type="submit" class="deposit-button">Proceed to Deposit</button>
+    </div>
+    <!-- <footer>
+      <p>&copy; 2025 Your Bank. All rights reserved.</p>
+    </footer> -->
+  </div>
+</main>

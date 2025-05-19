@@ -1,0 +1,107 @@
+.transaction-list {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.transaction-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.transaction-item:last-child {
+    border-bottom: none;
+}
+
+.left-section {
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.2em;
+}
+
+.icon.success {
+    background-color: #4CAF50; /* Green */
+}
+
+.icon.failed {
+    background-color: #F44336; /* Red */
+}
+
+.icon.sent {
+    background-color: #2196F3; /* Blue */
+}
+
+/* You can use images or icons here instead of colored circles */
+.icon::before {
+    content: ''; /* Placeholder for an actual icon */
+}
+.icon.success::before {
+    content: '\2713'; /* Checkmark */
+}
+.icon.failed::before {
+    content: '\2717'; /* X mark */
+}
+.icon.sent::before {
+    content: '\2192'; /* Right arrow */
+}
+
+
+.details {
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: #777;
+}
+
+.right-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.amount {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.amount.positive {
+    color: #4CAF50;
+}
+
+.amount.negative {
+    color: #F44336;
+}
+
+.date {
+    font-size: 12px;
+    color: #999;
+}
+.body {
+    font-family: sans-serif;
+    margin: 20px;
+    padding: 1rem;
+}

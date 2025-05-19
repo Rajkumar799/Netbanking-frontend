@@ -1,0 +1,202 @@
+<main style="display: flex; flex-direction: column; align-items: center">
+  <section
+    class="account-selection"
+    style="
+    display: inline;
+      border: black 1px solid;
+      text-align: center;
+      width: 70%;
+    "
+  >
+  <div class="form-group">
+      <h3>Select Account</h3>
+      <select id="fromAccount">
+        <option value="">Select an Account</option>
+        <option value="savings1">
+          Savings Account - XXXX-1234 (₹ 1,25,890.50)
+        </option>
+        <option value="current1">
+          Current Account - YYYY-5678 (₹ 50,000.00)
+        </option>
+      </select>
+    </div>
+    <div class="balance-info">
+      <span class="label">choose an account to see your cheque book</span>
+    </div>
+  </section>
+
+  <section class="cheque-book">
+    <div
+      class="slip-container d-block w-100"
+      style="
+        width: 80%;
+        background-color: rgb(105, 162, 232);
+        color: rgb(20, 13, 13);
+      "
+    >
+      <header style="display: flex; flex-direction: row; align-items: center">
+        <div class="slip-header">
+          <h4>Account Transfer Slip</h4>
+        </div>
+        <div class="form-group" style="margin-left: 25rem">
+          <label for="date">Date:</label>
+          <input type="text" id="date" readonly />
+        </div>
+      </header>
+
+      <section
+        style="
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 2rem;
+        "
+      >
+        <div class="left">
+          <div class="form-group">
+            <label for="from_account">From Account Number:</label>
+            <input
+              type="text"
+              id="from_account"
+              placeholder="Enter your account number"
+            />
+          </div>
+          <div class="form-group">
+            <label for="to_bank">To Bank Name:</label>
+            <input
+              type="text"
+              id="to_bank"
+              placeholder="Enter beneficiary bank name"
+            />
+          </div>
+        </div>
+
+        <div class="middle">
+          <div class="form-group">
+            <label for="to_account">To Account Number:</label>
+            <input
+              type="text"
+              id="to_account"
+              placeholder="Enter beneficiary account number"
+            />
+          </div>
+          <div class="form-group">
+            <label for="ifsc_code">IFSC Code:</label>
+            <input
+              type="text"
+              id="ifsc_code"
+              placeholder="Enter beneficiary bank IFSC code"
+            />
+          </div>
+        </div>
+        <div class="right">
+          <div class="amount-section">
+            <div class="form-group">
+              <label for="amount">Amount (INR):</label>
+              <input
+                type="number"
+                id="amount"
+                placeholder="Enter amount to transfer"
+              />
+            </div>
+            <div class="form-group">
+              <label for="payment_details">Payment Details (Optional):</label>
+              <input
+                type="text"
+                id="payment_details"
+                placeholder="Reason for transfer"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="button-container">
+        <button type="button">Initiate Transfer</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<style>
+  .cheque-book{
+    padding: 1rem;
+  }
+  body {
+    font-family: sans-serif;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .slip-container {
+    width: 400px;
+    border: 1px solid #ccc;
+    padding: 20px;
+  }
+
+  .bank-logo {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  .bank-logo img {
+    max-width: 150px;
+    height: auto;
+  }
+
+  .slip-header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+  }
+
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+
+  .form-group input[type="text"],
+  .form-group input[type="number"] {
+    width: calc(100% - 12px);
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  .amount-section {
+    border-top: 1px dashed #ccc;
+    padding-top: 15px;
+    margin-top: 20px;
+  }
+
+  .button-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .button-container button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  .button-container button:hover {
+    background-color: #0056b3;
+  }
+
+  .important-note {
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #777;
+  }
+</style>

@@ -1,0 +1,25 @@
+<main >
+  <div class="w3-container">
+    <div
+      class="w3-card-4"
+      id="acc-detail"
+      (click)="operAccountDetail()"
+      style="width: 16rem; display: inline-block; margin: 1rem"
+      *ngFor="let n of nums"
+      
+    >
+      <header class="w3-container w3-light-grey" style="text-align: center">
+        <br />
+        <h4>Savings</h4>
+      </header>
+      <div class="w3-container">
+        <br />
+        <h6>Account Number :</h6>
+        <p name="accnum">823648264364</p>
+        <hr />
+        <h5>Balance:_____</h5>
+      </div>
+      <button class="w3-button w3-block w3-dark-grey">Check Balance</button>
+    </div>
+  </div>
+</main>

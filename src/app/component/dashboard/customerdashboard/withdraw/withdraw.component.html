@@ -1,0 +1,140 @@
+<main class="body">
+  <section class="money-withdraw" [hidden]="withdrawhidden" >
+    <header>
+      <div class="back-button"><i class="fas fa-arrow-left"></i></div>
+      <h1>Withdraw Funds</h1>
+    </header>
+
+    <form class="withdrawal-form" style="display: flex; gap: 2rem">
+      <section class="account-selection">
+        <h3>Withdraw From</h3>
+        <div class="form-group">
+          <label for="fromAccount"
+            ><i class="fas fa-university"></i> Select Account</label
+          >
+          <select id="fromAccount">
+            <option value="">Select an Account</option>
+            <option value="savings1">
+              Savings Account - XXXX-1234 (₹ 1,25,890.50)
+            </option>
+            <option value="current1">
+              Current Account - YYYY-5678 (₹ 50,000.00)
+            </option>
+          </select>
+        </div>
+        <div class="balance-info">
+          <span class="label">Available Balance:</span>
+          <span class="amount">₹ 1,25,890.50</span>
+        </div>
+      </section>
+
+      <section class="withdrawal-details">
+        <h3>Withdrawal Details</h3>
+        <div class="form-group">
+          <label for="withdrawalAmount"
+            ><i class="fas fa-coins"></i> Withdrawal Amount (₹)</label
+          >
+          <div class="input-with-icon">
+            <i class="fas fa-rupee-sign"></i>
+            <input
+              type="number"
+              id="withdrawalAmount"
+              placeholder="Enter amount to withdraw"
+            />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="withdrawalMethod"
+            ><i class="fas fa-hand-holding-usd"></i> Withdrawal Method</label
+          >
+          <select id="withdrawalMethod">
+            <option value="">Select Method</option>
+            <option value="bankTransfer">Bank Transfer</option>
+            <option value="upiTransfer">UPI Transfer</option>
+          </select>
+        </div>
+        <div class="form-group" id="recipientDetails" style="display: none">
+          <label for="recipientAccount"
+            ><i class="fas fa-user-check"></i> Recipient Account/UPI ID</label
+          >
+          <input
+            type="text"
+            id="recipientAccount"
+            placeholder="Enter recipient details"
+          />
+        </div>
+        <div class="form-group">
+          <label for="remarks"
+            ><i class="fas fa-sticky-note"></i> Remarks (Optional)</label
+          >
+          <textarea id="remarks" placeholder="Add any notes"></textarea>
+        </div>
+      </section>
+    </form>
+
+    <div class="button-group">
+      <button type="reset" class="cancel-button">Cancel</button>
+      <button type="submit" class="withdraw-button">Proceed to Withdraw</button>
+    </div>
+  </section>
+
+  <section class="cheque-withdraw" style="width: 100%;"  [hidden]="chequehidden" >
+    <div class="transaction-list">
+      <div class="transaction-item" style="margin-bottom: 1rem;">
+        <div class="left-section">
+          <div class="icon sent"></div>
+          <div class="details">
+            <div class="title">Cheque SentBy</div>
+            <div class="subtitle">Sonu Kunamalla</div>
+          </div>
+        </div>
+
+        <div class="right-section">
+          <div class="amount">₹ 25000.00</div>
+          <div class="date">May 15, 2025, 2:00 PM</div>
+        </div>
+      </div>
+
+      <div class="transaction-item">
+        <div class="left-section">
+          <div class="icon sent"></div>
+          <div class="details">
+            <div class="title">Cheque SentBy</div>
+            <div class="subtitle">Sonu Kunamalla</div>
+          </div>
+        </div>
+        <div class="right-section">
+          <div class="amount">₹ 25000.00</div>
+          <div class="date">May 15, 2025, 2:00 PM</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script>
+  const withdrawalMethodSelect = document.getElementById("withdrawalMethod");
+  const recipientDetailsDiv = document.getElementById("recipientDetails");
+
+  withdrawalMethodSelect.addEventListener("change", function () {
+    if (this.value === "bankTransfer" || this.value === "upiTransfer") {
+      recipientDetailsDiv.style.display = "block";
+    } else {
+      recipientDetailsDiv.style.display = "none";
+    }
+  });
+
+  // In a real application, you would dynamically update the balance based on the selected account.
+  const fromAccountSelect = document.getElementById("fromAccount");
+  const balanceAmountSpan = document.querySelector(".balance-info .amount");
+
+  fromAccountSelect.addEventListener("change", function () {
+    const selectedOption = this.options[this.selectedIndex];
+    const balanceText = selectedOption.textContent.match(/\(₹\s([\d,.]+)\)/);
+    if (balanceText && balanceText[1]) {
+      balanceAmountSpan.textContent = `₹ ${balanceText[1]}`;
+    } else {
+      balanceAmountSpan.textContent = "₹ 0.00"; // Default or handle error
+    }
+  });
+</script>

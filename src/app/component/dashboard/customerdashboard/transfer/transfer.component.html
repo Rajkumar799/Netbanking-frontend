@@ -1,0 +1,59 @@
+<main class="body" style="width: 100%; border: black solid 1px">
+  <header>
+    <div class="back-button"></div>
+    <h1>Transfer Money</h1>
+  </header>
+  <div class="content" style="display: flex">
+    <div>
+      <section class="account-selection">
+        <div class="form-group">
+          <h3>Select Account</h3>
+          <select id="fromAccount">
+            <option value="">Select an Account</option>
+            <option value="savings1">
+              Savings Account - XXXX-1234 (₹ 1,25,890.50)
+            </option>
+            <option value="current1">
+              Current Account - YYYY-5678 (₹ 50,000.00)
+            </option>
+          </select>
+        </div>
+        <div class="balance-info">
+          <span class="label">choose an account to see your cheque book</span>
+        </div>
+      </section>
+      <section class="your account details">
+        <h5>your account no:232 23 23</h5>
+        <h5>your balance no:232 23 23</h5>
+      </section>
+    </div>
+
+    <section class="recipient-input">
+      <label for="recipient">Enter UPI ID / Account Number / Name</label>
+      <div class="input-group">
+        <input
+          type="text"
+          id="recipient"
+          placeholder="e.g., user@upi / 1234567890 / John Doe"
+        />
+      </div>
+      <label for="amount">Enter Amount</label>
+      <div class="input-group">
+        <span class="currency">₹</span>
+        <input type="number" id="amount" placeholder="0.00" />
+      </div>
+    </section>
+  </div>
+
+
+  <section class="payment-methods" style="text-align: center">
+    <h2>Payment Methods</h2>
+    <div style="display: flex; gap: 2rem; justify-content: center">
+      <button>Nift</button><button>Time</button><button>immidiate</button>
+    </div>
+  </section>
+
+  <button class="transfer-button">Send Money</button>
+
+  
+</main>
